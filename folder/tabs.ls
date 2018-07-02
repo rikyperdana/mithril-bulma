@@ -1,4 +1,4 @@
-pages.tabs = view: -> m \div,
+Meteor.isClient and pages.tabs = view: -> m \div,
 	m \nav.navbar.is-info,
 		m \.navbar-brand,
 			m \a.navbar-item, href: \#,

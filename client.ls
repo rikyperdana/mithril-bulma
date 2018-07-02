@@ -1,9 +1,10 @@
 if Meteor.isClient
 
-	templates = view: -> m \ul,
-		m \li, m \a, href: \/tabs, oncreate: m.route.link, \tabs
+	templates = view: -> m \ul, _.keys(pages)map (i) ->
+		m \li, m \a, href: "/#i", oncreate: m.route.link, i
 
 	m.route.prefix ''
 	m.route document.body, \/templates,
-		'/templates': templates
-		'/tabs': pages.tabs
+		_.merge '/templates': templates,
+			... _.keys(pages)map (i) ->
+				"/#i": pages[i]
