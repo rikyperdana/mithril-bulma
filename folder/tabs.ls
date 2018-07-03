@@ -1,10 +1,9 @@
 Meteor.isClient and pages.tabs = view: -> m \div,
 	m \nav.navbar.is-info,
 		m \.navbar-brand,
-			m \a.navbar-item, href: \#,
-				m \img,
-					src: 'https://bulma.io/images/bulma-logo.png'
-					width: \112, height: \28
+			m \a.navbar-item, href: \#, m \img,
+				src: 'https://bulma.io/images/bulma-logo.png'
+				width: \112, height: \28
 			m \.navbar-burger.burger, 'data-target': \navbarExampleTransparentExample,
 				[to 2]map -> m \span
 		m \#navbarExampleTransparentExample.navbar-menu,
@@ -13,22 +12,21 @@ Meteor.isClient and pages.tabs = view: -> m \div,
 				m \.navbar-item.has-dropdown.is-hoverable,
 					m \a.navbar-link, href: '/documentation/overview/start/', \Docs
 					m \.navbar-dropdown.is-boxed,
-						<[ admin forum cover cards blog search kanban]>map (i) ->
+						<[ admin forum cover cards blog search kanban ]>map (i) ->
 							m \a.navbar-item, href: "#i.html", _.startCase i
 			m \.navbar-end, m \.navbar-item, m \.field.is-grouped,
-				m \p.control,
-					m \a.bd-tw-button.button,
-						'data-social-network': \Twitter
-						'data-social-action': \tweet
-						'data-social-target': \#
-						target: \_blank
-						href: \#
-						m \span.icon, m \i.fab.fa-twitter
-						m \span, \Tweet
-				m \p.control,
-					m \a.button.is-primary, href: 'https://github.com/dansup/bulma-templates',
-						m \span.icon, m \i.fas.fa-download
-						m \span, \Download
+				m \p.control, m \a.bd-tw-button.button,
+					'data-social-network': \Twitter
+					'data-social-action': \tweet
+					'data-social-target': \#
+					target: \_blank
+					href: \#
+					m \span.icon, m \i.fab.fa-twitter
+					m \span, \Tweet
+				m \p.control, m \a.button.is-primary,
+					href: 'https://github.com/dansup/bulma-templates',
+					m \span.icon, m \i.fas.fa-download
+					m \span, \Download
 
 	m \section.hero.is-info,
 		m \.hero-body, m \.container,
